@@ -1,0 +1,38 @@
+{
+    "name": "Web Fixer",
+    "version": "1.0",
+    "description": "Fix annoying web sites",
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "jquery-3.3.1.min.js",
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "images/fixer.png",
+            "32": "images/fixer.png",
+            "48": "images/fixer.png",
+            "128": "images/fixer.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://localhost:2990/jira/*",
+                "https://www.facebook.com/*",
+                "https://discord.com/*"
+            ],
+            "js": [
+                "jquery-3.3.1.min.js",
+                "content.js"
+            ]
+        }
+    ],
+    
+    "manifest_version": 2
+}
